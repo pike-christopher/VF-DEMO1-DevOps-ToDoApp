@@ -82,64 +82,65 @@ class TodoCreate extends Component {
     }
 
     return ( <
-      div className = 'card left-a' >
-      <
-      div className = 'card-header' >
-      <
-      h5 > Create a todo < /h5> <
-      /div> <
-      div className = 'pad-right-50 pad-top-20 card-body left-a' >
-      <
-      form action = 'post'
-      method = 'post'
-      onSubmit = {
-        this.addTodos
-      } >
-      <
-      div className = 'form-group row' >
-      <
-      label className = 'col-form-label col-lg-2' > Description: < /label> <
-      div className = 'col-lg-10' >
-      <
-      input type = 'text'
-      required className = 'form-control'
-      id = 'todoDescription'
-      name = 'todoDescription'
-      placeholder = 'Enter description of what to be done?'
-      value = {
-        this.state.todoDescription
-      }
-      onChange = {
-        this.inputChange
-      } >
-      < /input> <
-      /div> <
-      /div>
+        div className = 'card left-a' >
+        <
+        div className = 'card-header' >
+        <
+        h5 > Add a new todo < /h5> < /
+        div > <
+        div className = 'pad-right-50 pad-top-20 card-body left-a' >
+        <
+        form action = 'post'
+        method = 'post'
+        onSubmit = {
+          this.addTodos
+        } >
+        <
+        div className = 'form-group row' >
+        <
+        label className = 'col-form-label col-lg-2' > Description: < /label> <
+        div className = 'col-lg-10' >
+        <
+        input type = 'text'
+        required className = 'form-control'
+        id = 'todoDescription'
+        name = 'todoDescription'
+        placeholder = 'Enter description of what to be done?'
+        value = {
+          this.state.todoDescription
+        }
+        onChange = {
+          this.inputChange
+        } >
+        <
+        /input> < /
+        div > <
+        /div>
 
-      <
-      div className = 'form-group row' >
-      <
-      label className = 'col-form-label col-lg-2' > Category: < /label> <
-      div className = 'col-lg-10' >
-      <
-      select name = 'todoCategory'
-      value = {
-        this.state.todoCategory
-      }
-      required className = 'col-lg-4'
-      onChange = {
-        this.inputChange
-      }
-      required >
-      <
-      option key = '-1'
-      value = '-1' >
-      Select A Category <
-      /option> {
+        <
+        div className = 'form-group row' >
+        <
+        label className = 'col-form-label col-lg-2' > Category: < /label> <
+        div className = 'col-lg-10' >
+        <
+        select name = 'todoCategory'
+        value = {
+          this.state.todoCategory
+        }
+        required className = 'col-lg-4'
+        onChange = {
+          this.inputChange
+        }
+        required >
+        <
+        option key = '-1'
+        value = '-1' >
+        Select A Category <
+        /option> {
         categoryOptions
       } <
-      /select> <
-      /div> <
+      /select> < /
+      div > <
       /div>
 
       <
@@ -148,16 +149,16 @@ class TodoCreate extends Component {
       div className = 'col-lg-10' >
       <
       button type = 'submit'
-      className = 'btn btn-primary' >
+    className = 'btn btn-primary' >
       Save Todo <
-      /button> <
-      /div> <
-      /div> <
-      /form> <
-      /div> <
-      /div>
-    );
-  }
+      /button> < /
+      div > <
+      /div> < /
+      form > <
+      /div> < /
+      div >
+  );
+}
 }
 
 // 1) Will map the Actions to Props e.g. fetch todos to be added to this.props

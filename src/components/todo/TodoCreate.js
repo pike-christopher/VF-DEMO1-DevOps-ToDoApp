@@ -66,11 +66,11 @@ class TodoCreate extends Component {
     let categoryOptions = [];
 
     if (categories && categories.length > 0) {
-      categoryOptions = categories.map(category => ( <
-        option key = {
+      categoryOptions = categories.map(category => (<
+        option key={
           category.key
         }
-        value = {
+        value={
           category.key
         } > {
           category.description
@@ -79,102 +79,101 @@ class TodoCreate extends Component {
       ));
 
       //categoryOptions.push(<option key="-1" defaultValue='true' value="-1">Please select a value</option>);
-    }
-
+      }
+  
     return ( <
-        div className = 'card left-a' >
-        <
-        div className = 'card-header' >
-        <
-        h5 > Add a new todo < /h5> < /
+        div className='card left-a' >
+          <
+        div className='card-header' >
+            <
+        h5 > Add a todo < /h5> < /
         div > <
-        div className = 'pad-right-50 pad-top-20 card-body left-a' >
-        <
-        form action = 'post'
-        method = 'post'
-        onSubmit = {
-          this.addTodos
-        } >
-        <
-        div className = 'form-group row' >
-        <
-        label className = 'col-form-label col-lg-2' > Description: < /label> <
-        div className = 'col-lg-10' >
-        <
-        input type = 'text'
-        required className = 'form-control'
-        id = 'todoDescription'
-        name = 'todoDescription'
-        placeholder = 'Enter description of what to be done?'
-        value = {
-          this.state.todoDescription
-        }
-        onChange = {
-          this.inputChange
-        } >
-        <
+        div className='pad-right-50 pad-top-20 card-body left-a' >
+                <
+        form action='post'
+                  method='post'
+                  onSubmit={
+                    this.addTodos
+                  } >
+                  <
+        div className='form-group row' >
+                    <
+        label className='col-form-label col-lg-2' > Description: < /label> <
+        div className='col-lg-10' >
+                        <input type='text'
+                          required className='form-control'
+                          id='todoDescription'
+                          name='todoDescription'
+                          placeholder='Enter description of what to be done?'
+                          value={
+                            this.state.todoDescription
+                          }
+                          onChange={
+                            this.inputChange
+                          } >
+                          <
         /input> < /
         div > <
         /div>
-
+                  
         <
-        div className = 'form-group row' >
-        <
-        label className = 'col-form-label col-lg-2' > Category: < /label> <
-        div className = 'col-lg-10' >
-        <
-        select name = 'todoCategory'
-        value = {
-          this.state.todoCategory
-        }
-        required className = 'col-lg-4'
-        onChange = {
-          this.inputChange
-        }
-        required >
-        <
-        option key = '-1'
-        value = '-1' >
-        Select A Category <
+        div className='form-group row' >
+                            <
+        label className='col-form-label col-lg-2' > Category: < /label> <
+        div className='col-lg-10' >
+                                <
+        select name='todoCategory'
+                                  value={
+                                    this.state.todoCategory
+                                  }
+                                  required className='col-lg-4'
+                                  onChange={
+                                    this.inputChange
+                                  }
+                                  required >
+                                  <
+        option key='-1'
+                                    value='-1' >
+                                    Select A Category <
         /option> {
-        categoryOptions
-      } <
+                                      categoryOptions
+                                    } <
       /select> < /
       div > <
       /div>
-
+                              
       <
-      div className = 'form-group row' >
-      <
-      div className = 'col-lg-10' >
-      <
-      button type = 'submit'
-    className = 'btn btn-primary' >
-      Save Todo <
+      div className='form-group row' >
+                                      <
+      div className='col-lg-10' >
+                                        <
+      button type='submit'
+                                          className='btn btn-primary' >
+                                          Save Todo <
       /button> < /
       div > <
       /div> < /
       form > <
       /div> < /
       div >
-  );
-}
-}
-
-// 1) Will map the Actions to Props e.g. fetch todos to be added to this.props
+                                      );
+                                    }
+                                    }
+                                    
+                                    // 1) Will map the Actions to Props e.g. fetch todos to be added to this.props
 const mapDispatchToProps = dispatch => {
   return {
-    todoCategoriesAction: bindActionCreators(todoCategoriesAction, dispatch),
-    addTodoAction: bindActionCreators(addTodoAction, dispatch)
-  };
-};
-
-// 2) Maps the reducer data to props
-// i.e the action has already dispatched and populated the reducer data
+                                            todoCategoriesAction: bindActionCreators(todoCategoriesAction, dispatch),
+                                          addTodoAction: bindActionCreators(addTodoAction, dispatch)
+                                        };
+                                      };
+                                      
+                                      // 2) Maps the reducer data to props
+                                      // i.e the action has already dispatched and populated the reducer data
 const mapStateToProps = state => {
   return {
-    categories: state.fetchCategories
-  };
-};
-
+                                            categories: state.fetchCategories
+                                        };
+                                      };
+                                      
 export default connect(mapStateToProps, mapDispatchToProps)(TodoCreate);
